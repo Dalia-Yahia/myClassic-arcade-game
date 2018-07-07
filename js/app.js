@@ -1,8 +1,8 @@
 // starter  of the Game
-let startModel = document.querySelector(".starter");
-let overlay = document.querySelector(".overlay");
-let gameEnd = document.querySelector(".game-over");
-let winModel = document.querySelector(".winner");
+const startModel = document.querySelector(".starter");
+const overlay = document.querySelector(".overlay");
+const gameEnd = document.querySelector(".game-over");
+const winModel = document.querySelector(".winner");
 
 let playerPoints = 0;
 let playerLives = 5;
@@ -42,7 +42,7 @@ function Winner(){
 
 // Enemies whose the player must avoid
 //start ENEMY
-var Enemy = function (x, y, speed) {
+const Enemy = function (x, y, speed) {
     // The following variables are used to determine the x and y axis and speed of the enemy
     this.x = x;
     this.y = y;
@@ -85,7 +85,7 @@ Enemy.prototype.render = function () {
 
 // start  PLAYER
 // Player class focusing on x and y axis
-var Player = function (x, y) {
+const Player = function (x, y) {
     // Variables for the player to move along x and y axis
     this.x = x;
     this.y = y;
@@ -143,7 +143,7 @@ Player.prototype.reset = function() {
 //end PLAYER
 
 //start LIVES
-var Lives = function(x, y) {
+const Lives = function(x, y) {
     this.x = x;
     this.y = y
     this.sprite = 'images/Heart.png';
@@ -156,7 +156,7 @@ Lives.prototype.render = function(){
 // end LIVES
 
 // start GEM  class and winning
-var Gem = function(x, y) {
+const Gem = function(x, y) {
     this.x = x;
     this.y = y;
     this.sprite = 'images/Gem Green.png';
@@ -168,12 +168,12 @@ Gem.prototype.render = function() {
 }
 
 //winning block class to figure out when a player wins
-var VictoryGem = function(x, y) {
+const VictoryGem = function(x, y) {
     this.x = x;
     this.y = y;
 }
 
-var victoryGemX, victoryGemY;
+let victoryGemX, victoryGemY;
 VictoryGem.prototype.update = function() {
     victoryGemX = this.x;
     victoryGemY = this.y;
@@ -191,7 +191,7 @@ VictoryGem.prototype.update = function() {
 }
 
 // class to set player points
-var Points = function(x, y, score){
+const Points = function(x, y, score){
     this.x = x;
     this.y = y;
     this.score = `Your points: ${playerPoints}`;
@@ -208,20 +208,20 @@ Points.prototype.update = function(){
 
 // arrange Enemy location randomly
 // possible X-axis positions on board
-var columns = [ -5, -100, -200, -300, -400];
-var enemyX;
+let columns = [ -5, -100, -200, -300, -400];
+let enemyX;
 
 // possible Y-axis positions on board
-var rows = [ 60, 140, 220];
-var enemyY;
+let rows = [ 60, 140, 220];
+let enemyY;
 
-var enemySpeed;
+let enemySpeed;
 
 // All enemies are placed in an array
-var allEnemies = [];
+let allEnemies = [];
 
 // Location of the 3 enemies on the y axis located on the stone road
-var enemyLocation = [63, 147, 230];
+let enemyLocation = [63, 147, 230];
 
 // For each enemy located on the y axis from 0 on the x axis move at a speed of 200
 // Until randomly regenerated in the enemy update function above
@@ -231,22 +231,22 @@ enemyLocation.forEach(function (locationY) {
 });
 
 // The starting location of the player is located at x=200, y=405
-var player = new Player(202, 405);
+let player = new Player(202, 405);
 
-var allLives = [ new Lives(10, 540), new Lives(40, 540), new Lives(70, 540), new Lives(100, 540), new Lives(130, 540)];
+let allLives = [ new Lives(10, 540), new Lives(40, 540), new Lives(70, 540), new Lives(100, 540), new Lives(130, 540)];
 
-var allGems = [];
+let allGems = [];
 
 // instantiate winning blocks
-var victoryGems = [ new VictoryGem(-2, -10), new VictoryGem(100, -10), new VictoryGem(202, -10), new VictoryGem(304, -10), new VictoryGem(404, -10)];
+let victoryGems = [ new VictoryGem(-2, -10), new VictoryGem(100, -10), new VictoryGem(202, -10), new VictoryGem(304, -10), new VictoryGem(404, -10)];
 
-var points = new Points(350, 570)
+let points = new Points(350, 570)
 
 
 // This listens for key presses and sends the keys to your
 // Player.handleInput() method.
 document.addEventListener('keyup', function (e) {
-    var allowedKeys = {
+    let allowedKeys = {
         37: 'left',
         38: 'up',
         39: 'right',
