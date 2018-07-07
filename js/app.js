@@ -190,7 +190,7 @@ VictoryGem.prototype.update = function() {
     }
 }
 
-// class to give player points
+// class to set player points
 var Points = function(x, y, score){
     this.x = x;
     this.y = y;
