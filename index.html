@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Effective JavaScript: Frogger</title>
+        <link href="https://fonts.googleapis.com/css?family=Courgette|Kalam" rel="stylesheet">
+        <link rel="stylesheet" href="css/style.css">
+    </head>
+    <body>
+        <!-- Game header -->
+        <div class="header">
+            <h1>Classic ARCADE Game</h1>
+        </div>
+
+        <!-- dark overlay -->
+        <div class="overlay"></div>
+
+        <!-- starting the game model-->
+        <div class="starter">
+            <h1>Welcome to the game</h1>
+            <h3>Instructions</h3>
+            <p>Use your arrow keys to move the player: up, down, left, right.
+              Ensure your player doesn't touch the bugs.
+              You loose 50pts and a live  on any collison.</p>
+            <h3>Challenge</h3>
+            <p>Try to get to the water blocks at the top and gain 5 green gems to win game.</p>
+            <h4>You have 5 lives. Good luck!</h4>
+            <button onclick="startGame()">accept  the Challenge </button>
+        </div>
+
+        <!-- losing model -->
+        <div class="game-over">
+            <h1>Game Over</h1>
+            <p>You lost all 3 lives</p>
+            <h3>Play again</h3>
+            <button onclick="resetGame()"> Play Again </button>
+        </div>
+
+        <!-- winning model -->
+        <div class="victory">
+            <h1> 🎉 Winner 🎉 </h1>
+            <h3>Play again to win again</h3>
+            <button onclick="resetGame()"> Play Again </button>
+        </div>
+
+        <!-- all javascript -->
+        <script src="js/resources.js"></script>
+        <script src="js/app.js"></script>
+        <script src="js/engine.js"></script>
+    </body>
+</html>
