@@ -1,8 +1,10 @@
+// Whole-script strict mode syntax
+'use strict';
 // starter  of the Game
 const startModel = document.querySelector(".starter");
 const overlay = document.querySelector(".overlay");
 const gameEnd = document.querySelector(".game-over");
-const winModel = document.querySelector(".winner");
+const winModel = document.querySelector(".victory");
 
 let playerPoints = 0;
 let playerLives = 5;
@@ -92,7 +94,7 @@ const Player = function (x, y) {
     this.player = 'images/char-princess-girl.png';
 };
 
-let playerX,payerY;
+let playerX, playerY;
 Player.prototype.update = function (dt) {
     playerX = this.x;
     playerY = this.y;
@@ -186,7 +188,7 @@ VictoryGem.prototype.update = function() {
     }
     else if (allGems.length == 5) {
         console.log("You win Game");
-        winner();
+        Winner();
     }
 }
 
@@ -226,7 +228,7 @@ let enemyLocation = [63, 147, 230];
 // For each enemy located on the y axis from 0 on the x axis move at a speed of 200
 // Until randomly regenerated in the enemy update function above
 enemyLocation.forEach(function (locationY) {
-    enemy = new Enemy(0, locationY, 200);
+     const enemy = new Enemy(0, locationY, 200);
     allEnemies.push(enemy);
 });
 
